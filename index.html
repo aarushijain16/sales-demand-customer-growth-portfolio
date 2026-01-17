@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sales, Demand & Customer Growth Analytics</title>
+  <title>Sales, Demand &amp; Customer Growth Analytics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
       padding: 40px 20px;
       line-height: 1.65;
@@ -17,18 +21,21 @@
     }
 
     h1 {
-      font-size: 2.3rem;
-      margin-bottom: 6px;
+      font-size: 2.4rem;
+      margin-bottom: 5px;
     }
 
     h2 {
-      margin-top: 55px;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 6px;
     }
 
     h3 {
-      margin-top: 30px;
+      margin-top: 20px;
+      font-size: 1.15rem;
     }
 
     p {
@@ -37,19 +44,52 @@
     }
 
     .subtitle {
+      color: #6b7280;
+      margin-bottom: 25px;
       font-size: 1.05rem;
-      color: #4b5563;
-      margin-bottom: 22px;
     }
 
-    ul {
-      margin-left: 18px;
+    /* ===== GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
     }
 
+    /* ===== CARDS ===== */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      background: #ffffff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ===== TAGS ===== */
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 6px 8px 6px 0;
+    }
+
+    .blue { background: #e0f2fe; color: #075985; }
+    .green { background: #dcfce7; color: #14532d; }
+    .purple { background: #ede9fe; color: #4c1d95; }
+    .orange { background: #ffedd5; color: #7c2d12; }
+
+    /* ===== BUTTONS ===== */
     .btn {
       display: inline-block;
-      margin-top: 8px;
-      padding: 8px 14px;
+      margin-top: 10px;
+      padding: 9px 16px;
       background: #111827;
       color: #ffffff;
       text-decoration: none;
@@ -57,17 +97,9 @@
       font-size: 0.9rem;
     }
 
-    .badge {
-      display: inline-block;
-      background: #f3f4f6;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin: 6px 8px 6px 0;
-      font-size: 0.9rem;
-    }
-
-    .case {
-      margin-top: 30px;
+    .btn.secondary {
+      background: #2563eb;
+      margin-left: 10px;
     }
 
     footer {
@@ -83,7 +115,7 @@
 <body>
 
   <!-- HERO -->
-  <h1>Sales, Demand & Customer Growth Analytics</h1>
+  <h1>Sales, Demand &amp; Customer Growth Analytics</h1>
   <p class="subtitle">Retail | E-commerce | Offline Businesses</p>
 
   <p>
@@ -93,48 +125,81 @@
 
   <p>
     My work focuses on solving <strong>real business problems</strong> across retail, e-commerce,
-    and platform businesses — enabling better <strong>sales planning, customer growth, and inventory decisions</strong>.
+    and platform businesses — enabling better
+    <strong>sales planning, customer growth, and inventory decisions</strong>.
   </p>
 
   <!-- SERVICES -->
   <h2>What I Help Businesses With</h2>
   <ul>
-    <li>Sales & demand forecasting (short- and medium-term)</li>
+    <li>Sales &amp; demand forecasting (short- and medium-term)</li>
     <li>Revenue trends, seasonality, and growth analysis</li>
     <li>Inventory planning aligned with demand signals</li>
     <li>Customer segmentation, retention, and churn analysis</li>
     <li>Power BI dashboards built for decision-making, not just reporting</li>
   </ul>
 
+  <!-- SKILLS -->
+  <h2>🛠 Skills &amp; Expertise</h2>
+
+  <h3>Core Analytics &amp; Tools</h3>
+  <span class="tag blue">Python</span>
+  <span class="tag blue">SQL</span>
+  <span class="tag blue">PostgreSQL</span>
+  <span class="tag blue">Power BI</span>
+  <span class="tag blue">R</span>
+  <span class="tag blue">Excel</span>
+
+  <h3>Forecasting &amp; Advanced Analytics</h3>
+  <span class="tag purple">Time Series Forecasting</span>
+  <span class="tag purple">Predictive Analytics</span>
+  <span class="tag purple">Clustering</span>
+  <span class="tag purple">Machine Learning</span>
+
+  <h3>Business &amp; Domain Analytics</h3>
+  <span class="tag green">Inventory Analytics</span>
+  <span class="tag green">ABC–XYZ Classification</span>
+  <span class="tag green">Customer Analytics</span>
+  <span class="tag green">Profitability Analysis</span>
+
+  <h3>Visualization &amp; Storytelling</h3>
+  <span class="tag orange">Power BI Dashboards</span>
+  <span class="tag orange">Insight Storytelling</span>
+  <span class="tag orange">Executive Reporting</span>
+
   <!-- CASE STUDIES -->
-  <h2>Selected Case Studies</h2>
+  <h2>📂 Selected Case Studies</h2>
 
-  <div class="case">
-    <h3>1️⃣ Sales & Demand–Driven Inventory Planning (Retail)</h3>
-    <p><strong>Problem:</strong> Frequent stock-outs, excess inventory, and unclear demand signals impacted revenue and cash flow.</p>
-    <p><strong>Outcome:</strong> Improved inventory prioritization, reduced lost sales, and stronger cash-flow planning.</p>
-    <a class="btn" href="case-studies/maven-superstore/">View case study</a>
-  </div>
+  <div class="grid">
 
-  <div class="case">
-    <h3>2️⃣ Customer Retention & Revenue Growth Analytics (Food Delivery Platform)</h3>
-    <p><strong>Problem:</strong> High customer churn with limited visibility into retention and revenue leakage drivers.</p>
-    <p><strong>Outcome:</strong> Identified high-risk customer segments and actionable opportunities to improve retention and revenue.</p>
-    <a class="btn" href="case-studies/foodpanda-customer-growth/">View case study</a>
-  </div>
+    <div class="card">
+      <h3>Sales &amp; Demand–Driven Inventory Planning (Retail)</h3>
+      <p><strong>Problem:</strong> Stock-outs, excess inventory, unclear demand signals.</p>
+      <p><strong>Outcome:</strong> Better inventory prioritization, reduced lost sales, improved cash flow.</p>
+      <a class="btn" href="case-studies/maven-superstore/">View case study</a>
+    </div>
 
-  <div class="case">
-    <h3>3️⃣ Customer Segmentation & Sales Planning (Lifestyle / D2C Brand)</h3>
-    <p><strong>Problem:</strong> Limited understanding of customer behavior and its impact on sales planning.</p>
-    <p><strong>Outcome:</strong> Segmentation-led insights to support demand planning, targeted engagement, and growth strategy.</p>
-    <a class="btn" href="case-studies/nicobar-customer-segmentation/">View case study</a>
+    <div class="card">
+      <h3>Customer Retention &amp; Revenue Growth (Food Delivery)</h3>
+      <p><strong>Problem:</strong> High churn and limited retention visibility.</p>
+      <p><strong>Outcome:</strong> Identified high-risk segments and revenue growth levers.</p>
+      <a class="btn" href="case-studies/foodpanda-customer-growth/">View case study</a>
+    </div>
+
+    <div class="card">
+      <h3>Customer Segmentation &amp; Sales Planning (Lifestyle / D2C)</h3>
+      <p><strong>Problem:</strong> Limited understanding of customer behavior.</p>
+      <p><strong>Outcome:</strong> Segmentation-led demand and growth insights.</p>
+      <a class="btn" href="case-studies/nicobar-customer-segmentation/">View case study</a>
+    </div>
+
   </div>
 
   <!-- FORECASTING -->
-  <h2>Supporting Forecasting & Credibility Work</h2>
+  <h2>Supporting Forecasting &amp; Credibility Work</h2>
 
   <p>
-    <strong>Market Demand & Seasonality Forecasting — Hospitality (London Airbnb)</strong><br>
+    <strong>Market Demand &amp; Seasonality Forecasting — Hospitality (London Airbnb)</strong><br>
     Designed demand forecasts using proxy signals where direct demand data was unavailable.
     <em>(MSc Dissertation; later selected for academic publication)</em>
   </p>
@@ -147,34 +212,16 @@
   <!-- DASHBOARDS -->
   <h2>Dashboard Samples (Power BI)</h2>
   <ul>
-    <li>Blinkit grocery sales & customer insights</li>
+    <li>Blinkit grocery sales &amp; customer insights</li>
     <li>Pizza sales performance dashboard</li>
   </ul>
 
   <p><em>Shown as visual samples; full case studies available on request.</em></p>
 
-  <!-- TOOLS -->
-  <h2>Tools</h2>
-  <span class="badge">Power BI</span>
-  <span class="badge">SQL</span>
-  <span class="badge">Python</span>
-  <span class="badge">PostgreSQL</span>
-  <span class="badge">R</span>
-  <span class="badge">Excel</span>
-  <span class="badge">SAS</span>
-
   <!-- CONTACT -->
   <h2>Contact</h2>
-  <p>
-    <strong>LinkedIn:</strong>
-    <a href="https://www.linkedin.com/in/aarushiijainn" target="_blank">
-      https://www.linkedin.com/in/aarushiijainn
-    </a>
-  </p>
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:aarushi.careers16@gmail.com">aarushi.careers16@gmail.com</a>
-  </p>
+  <a class="btn" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
+  <a class="btn secondary" href="mailto:aarushi.careers16@gmail.com">Email</a>
 
   <footer>
     If you’re looking to forecast sales, plan demand, or strengthen customer-driven revenue decisions,
@@ -183,4 +230,3 @@
 
 </body>
 </html>
-
