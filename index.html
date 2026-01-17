@@ -12,62 +12,55 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.65;
+    }
+
+    .container {
       max-width: 1150px;
       margin: auto;
-      padding: 40px 20px;
-      line-height: 1.65;
-      color: #1f2937;
-      background-color: #ffffff;
+      padding: 50px 20px;
     }
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     h2 {
-      margin-top: 60px;
-      margin-bottom: 20px;
       font-size: 1.6rem;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 6px;
+      margin-bottom: 20px;
     }
 
     h3 {
-      margin-top: 20px;
       font-size: 1.15rem;
+      margin-bottom: 8px;
     }
 
     p {
-      color: #374151;
       max-width: 900px;
+      color: #374151;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
     }
 
     .subtitle {
       color: #6b7280;
-      margin-bottom: 25px;
       font-size: 1.05rem;
-    }
-
-    /* ===== GRID ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
-
-    /* ===== CARDS ===== */
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 20px;
-      background: #ffffff;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: #c7d2fe;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      margin-bottom: 25px;
     }
 
     /* ===== TAGS ===== */
@@ -78,17 +71,36 @@
       font-size: 0.85rem;
       font-weight: 500;
       margin: 6px 8px 6px 0;
+      background: #eef2ff;
+      color: #3730a3;
     }
 
-    .blue { background: #e0f2fe; color: #075985; }
-    .green { background: #dcfce7; color: #14532d; }
-    .purple { background: #ede9fe; color: #4c1d95; }
-    .orange { background: #ffedd5; color: #7c2d12; }
+    /* ===== GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 22px;
+      background: #ffffff;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
 
     /* ===== BUTTONS ===== */
     .btn {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 12px;
       padding: 9px 16px;
       background: #111827;
       color: #ffffff;
@@ -102,126 +114,131 @@
       margin-left: 10px;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
     footer {
-      margin-top: 80px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.9rem;
+      text-align: center;
       color: #6b7280;
+      font-size: 0.9rem;
+      padding: 40px 20px 60px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <h1>Sales, Demand &amp; Customer Growth Analytics</h1>
-  <p class="subtitle">Retail | E-commerce | Offline Businesses</p>
+  <div class="container">
 
-  <p>
-    I help businesses <strong>forecast sales, understand demand patterns, and grow revenue</strong>
-    by transforming raw data into clear insights, reliable forecasts, and decision-ready dashboards.
-  </p>
+    <!-- HERO -->
+    <section class="section hero">
+      <h1>Sales, Demand &amp; Customer Growth Analytics</h1>
+      <p class="subtitle">Retail | E-commerce | Offline Businesses</p>
 
-  <p>
-    My work focuses on solving <strong>real business problems</strong> across retail, e-commerce,
-    and platform businesses — enabling better
-    <strong>sales planning, customer growth, and inventory decisions</strong>.
-  </p>
+      <p>
+        I help businesses <strong>forecast sales, understand demand patterns, and grow revenue</strong>
+        by transforming raw data into clear insights, reliable forecasts, and decision-ready dashboards.
+      </p>
 
-  <!-- SERVICES -->
-  <h2>What I Help Businesses With</h2>
-  <ul>
-    <li>Sales &amp; demand forecasting (short- and medium-term)</li>
-    <li>Revenue trends, seasonality, and growth analysis</li>
-    <li>Inventory planning aligned with demand signals</li>
-    <li>Customer segmentation, retention, and churn analysis</li>
-    <li>Power BI dashboards built for decision-making, not just reporting</li>
-  </ul>
+      <p>
+        My work focuses on solving <strong>real business problems</strong> across retail, e-commerce,
+        and platform businesses — enabling better
+        <strong>sales planning, customer growth, and inventory decisions</strong>.
+      </p>
+    </section>
 
-  <!-- SKILLS -->
-  <h2>🛠 Skills &amp; Expertise</h2>
+    <!-- SERVICES -->
+    <section class="section">
+      <h2>What I Help Businesses With</h2>
+      <ul>
+        <li>Sales &amp; demand forecasting (short- and medium-term)</li>
+        <li>Revenue trends, seasonality, and growth analysis</li>
+        <li>Inventory planning aligned with demand signals</li>
+        <li>Customer segmentation, retention, and churn analysis</li>
+        <li>Power BI dashboards built for decision-making</li>
+      </ul>
+    </section>
 
-  <h3>Core Analytics &amp; Tools</h3>
-  <span class="tag blue">Python</span>
-  <span class="tag blue">SQL</span>
-  <span class="tag blue">PostgreSQL</span>
-  <span class="tag blue">Power BI</span>
-  <span class="tag blue">R</span>
-  <span class="tag blue">Excel</span>
+    <!-- SKILLS -->
+    <section class="section">
+      <h2>🛠 Skills &amp; Expertise</h2>
 
-  <h3>Forecasting &amp; Advanced Analytics</h3>
-  <span class="tag purple">Time Series Forecasting</span>
-  <span class="tag purple">Predictive Analytics</span>
-  <span class="tag purple">Clustering</span>
-  <span class="tag purple">Machine Learning</span>
+      <h3>Core Analytics &amp; Tools</h3>
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">R</span>
+      <span class="tag">Excel</span>
 
-  <h3>Business &amp; Domain Analytics</h3>
-  <span class="tag green">Inventory Analytics</span>
-  <span class="tag green">ABC–XYZ Classification</span>
-  <span class="tag green">Customer Analytics</span>
-  <span class="tag green">Profitability Analysis</span>
+      <h3>Forecasting &amp; Advanced Analytics</h3>
+      <span class="tag">Time Series Forecasting</span>
+      <span class="tag">Predictive Analytics</span>
+      <span class="tag">Clustering</span>
+      <span class="tag">Machine Learning</span>
 
-  <h3>Visualization &amp; Storytelling</h3>
-  <span class="tag orange">Power BI Dashboards</span>
-  <span class="tag orange">Insight Storytelling</span>
-  <span class="tag orange">Executive Reporting</span>
+      <h3>Business &amp; Domain Analytics</h3>
+      <span class="tag">Inventory Analytics</span>
+      <span class="tag">ABC–XYZ Classification</span>
+      <span class="tag">Customer Analytics</span>
+      <span class="tag">Profitability Analysis</span>
+    </section>
 
-  <!-- CASE STUDIES -->
-  <h2>📂 Selected Case Studies</h2>
+    <!-- CASE STUDIES -->
+    <section class="section">
+      <h2>📂 Selected Case Studies</h2>
 
-  <div class="grid">
+      <div class="grid">
 
-    <div class="card">
-      <h3>Sales &amp; Demand–Driven Inventory Planning (Retail)</h3>
-      <p><strong>Problem:</strong> Stock-outs, excess inventory, unclear demand signals.</p>
-      <p><strong>Outcome:</strong> Better inventory prioritization, reduced lost sales, improved cash flow.</p>
-      <a class="btn" href="case-studies/maven-superstore/">View case study</a>
-    </div>
+        <div class="card">
+          <h3>Sales &amp; Demand–Driven Inventory Planning</h3>
+          <p><strong>Problem:</strong> Stock-outs, excess inventory, unclear demand signals.</p>
+          <p><strong>Outcome:</strong> Reduced lost sales and improved cash flow.</p>
+          <a class="btn" href="case-studies/maven-superstore/">View case study</a>
+        </div>
 
-    <div class="card">
-      <h3>Customer Retention &amp; Revenue Growth (Food Delivery)</h3>
-      <p><strong>Problem:</strong> High churn and limited retention visibility.</p>
-      <p><strong>Outcome:</strong> Identified high-risk segments and revenue growth levers.</p>
-      <a class="btn" href="case-studies/foodpanda-customer-growth/">View case study</a>
-    </div>
+        <div class="card">
+          <h3>Customer Retention &amp; Revenue Growth</h3>
+          <p><strong>Problem:</strong> High churn and unclear retention drivers.</p>
+          <p><strong>Outcome:</strong> Identified high-risk segments and revenue levers.</p>
+          <a class="btn" href="case-studies/foodpanda-customer-growth/">View case study</a>
+        </div>
 
-    <div class="card">
-      <h3>Customer Segmentation &amp; Sales Planning (Lifestyle / D2C)</h3>
-      <p><strong>Problem:</strong> Limited understanding of customer behavior.</p>
-      <p><strong>Outcome:</strong> Segmentation-led demand and growth insights.</p>
-      <a class="btn" href="case-studies/nicobar-customer-segmentation/">View case study</a>
-    </div>
+        <div class="card">
+          <h3>Customer Segmentation &amp; Sales Planning</h3>
+          <p><strong>Problem:</strong> Limited understanding of customer behavior.</p>
+          <p><strong>Outcome:</strong> Segmentation-led growth insights.</p>
+          <a class="btn" href="case-studies/nicobar-customer-segmentation/">View case study</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FORECASTING -->
+    <section class="section">
+      <h2>Supporting Forecasting &amp; Credibility Work</h2>
+
+      <p>
+        <strong>Market Demand &amp; Seasonality Forecasting — Hospitality (London Airbnb)</strong><br>
+        Designed demand forecasts using proxy signals where direct demand data was unavailable.
+        <em>(MSc Dissertation; later selected for academic publication)</em>
+      </p>
+
+      <ul>
+        <li>Retail sales forecasting — German drugstore chain</li>
+        <li>Time-series sales forecasting — seasonal ice-cream retail</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section">
+      <h2>Contact</h2>
+      <a class="btn" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
+      <a class="btn secondary" href="mailto:aarushi.careers16@gmail.com">Email</a>
+    </section>
 
   </div>
-
-  <!-- FORECASTING -->
-  <h2>Supporting Forecasting &amp; Credibility Work</h2>
-
-  <p>
-    <strong>Market Demand &amp; Seasonality Forecasting — Hospitality (London Airbnb)</strong><br>
-    Designed demand forecasts using proxy signals where direct demand data was unavailable.
-    <em>(MSc Dissertation; later selected for academic publication)</em>
-  </p>
-
-  <ul>
-    <li>Retail sales forecasting — German drugstore chain (Python, SAS, Excel)</li>
-    <li>Time-series sales forecasting — seasonal ice-cream retail (R)</li>
-  </ul>
-
-  <!-- DASHBOARDS -->
-  <h2>Dashboard Samples (Power BI)</h2>
-  <ul>
-    <li>Blinkit grocery sales &amp; customer insights</li>
-    <li>Pizza sales performance dashboard</li>
-  </ul>
-
-  <p><em>Shown as visual samples; full case studies available on request.</em></p>
-
-  <!-- CONTACT -->
-  <h2>Contact</h2>
-  <a class="btn" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
-  <a class="btn secondary" href="mailto:aarushi.careers16@gmail.com">Email</a>
 
   <footer>
     If you’re looking to forecast sales, plan demand, or strengthen customer-driven revenue decisions,
