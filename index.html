@@ -2,221 +2,267 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sales, Demand & Customer Growth Analytics Portfolio</title>
+  <title>Sales, Demand & Customer Analytics Portfolio</title>
 
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                    Roboto, Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.7;
+      background: #ffffff;
       color: #111827;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      line-height: 1.6;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
     }
 
     h2 {
-      font-size: 1.9rem;
-      margin-top: 60px;
-      margin-bottom: 18px;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     p {
-      font-size: 1rem;
       margin-bottom: 14px;
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-
-    li {
-      margin-bottom: 18px;
-    }
-
-    em {
       color: #374151;
     }
 
-    /* Primary buttons */
+    /* SECTION DIVIDER */
+    section {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* BUTTONS (smaller) */
     .btn {
       display: inline-block;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      background-color: #111827;
-      color: #ffffff;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: #1f2937;
-    }
-
-    .btn.secondary {
-      background-color: #2563eb;
-    }
-
-    .btn.secondary:hover {
-      background-color: #1d4ed8;
-    }
-
-    /* Small buttons */
-    .btn-link {
-      display: inline-block;
-      margin-left: 8px;
       padding: 6px 12px;
       font-size: 0.85rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 500;
-      background-color: #111827;
+      background: #111827;
       color: #ffffff;
-      transition: background-color 0.2s ease;
+      margin-right: 8px;
     }
 
-    .btn-link:hover {
-      background-color: #1f2937;
+    .btn.secondary {
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #d1d5db;
     }
 
-    .inline-buttons {
-      display: inline-flex;
-      gap: 12px;
-      margin-left: 10px;
-      vertical-align: middle;
+    .btn:hover {
+      opacity: 0.9;
     }
 
+    /* GRID FOR PROJECT TILES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    /* PROJECT CARD */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    /* FOOTER */
     footer {
-      text-align: center;
-      color: #6b7280;
-      font-size: 1rem;
-      padding: 70px 20px 90px;
-      line-height: 1.7;
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.95rem;
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- HERO -->
-  <h1>Sales, Demand & Customer Growth Analytics Portfolio</h1>
+  <h1>Sales, Demand & Customer Growth Analytics</h1>
   <p><strong>Retail | E-commerce | Offline Businesses</strong></p>
 
   <p>
-    I help businesses <strong>forecast sales, understand demand patterns,
-    and grow revenue</strong> by turning raw data into clear insights,
-    forecasts, and decision-ready dashboards.
+    I help businesses <strong>forecast sales, understand demand patterns, and grow revenue</strong>
+    by turning raw data into clear insights, forecasts, and decision-ready dashboards.
   </p>
 
   <!-- WHAT I HELP -->
-  <h2>🎯 What I Help Businesses With</h2>
-  <ul>
-    <li>Sales & demand forecasting (short- and medium-term)</li>
-    <li>Revenue and seasonality analysis</li>
-    <li>Inventory planning using demand signals</li>
-    <li>Customer segmentation, retention & churn analysis</li>
-    <li>Power BI dashboards for decision-making</li>
-  </ul>
+  <section>
+    <h2>🧭 What I Help Businesses With</h2>
+    <ul>
+      <li>Sales & demand forecasting</li>
+      <li>Inventory planning using demand signals</li>
+      <li>Customer segmentation, retention & churn analysis</li>
+      <li>Revenue & seasonality analysis</li>
+      <li>Power BI dashboards for decision-making</li>
+    </ul>
+  </section>
 
-  <!-- FLAGSHIP CASE STUDIES -->
-  <h2>🚀 Flagship Case Studies</h2>
+  <!-- CASE STUDIES -->
+  <section>
+    <h2>📂 Case Studies</h2>
 
-  <p>
-    <strong>Sales & Demand–Driven Inventory Planning (Retail)</strong><br>
-    Reduced stock-outs, excess inventory, and cash trapped in low-performing SKUs.
-    <a class="btn-link" href="https://github.com/aarushijain16/maven-superstore-postgresql" target="_blank">
-      View case study
-    </a>
-  </p>
+    <div class="grid">
 
-  <p>
-    <strong>Customer Retention & Revenue Growth Analytics (Food Delivery)</strong><br>
-    Identified high-churn segments and retention-led revenue opportunities.
-    <a class="btn-link" href="https://github.com/aarushijain16/foodpanda-sql" target="_blank">
-      View case study
-    </a>
-  </p>
+      <div class="card">
+        <h3>Sales & Demand-Driven Inventory Planning (Retail)</h3>
+        <p>
+          Reduced stock-outs, excess inventory, and cash blockage using
+          ABC-XYZ classification, safety stock, and profitability analysis.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Sales-and-Demand-Driven-Inventory-Planning-Retail-" target="_blank">
+          View case study
+        </a>
+      </div>
 
-  <p>
-    <strong>Omnichannel Customer Segmentation & Growth Strategy (Lifestyle / D2C)</strong><br>
-    Built persona-led CRM and engagement strategies without discount dependency.
-    <a class="btn-link" href="https://github.com/aarushijain16/nicobar-proxy-omni-channel" target="_blank">
-      View case study
-    </a>
-  </p>
+      <div class="card">
+        <h3>Customer Retention & Revenue Growth (Food Delivery)</h3>
+        <p>
+          Identified high-churn segments and revenue leakage using RFM,
+          churn, and retention analytics.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Customer-Retention-and-Revenue-Growth-Analytics" target="_blank">
+          View case study
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Omnichannel Customer Segmentation (D2C / Lifestyle)</h3>
+        <p>
+          Built customer personas, CLV proxies, and engagement insights
+          to support CRM and growth strategy.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Omnichannel-Customer-Segmentation-and-Growth-Strategy" target="_blank">
+          View case study
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORECASTING -->
+  <section>
+    <h2>📈 Supporting Forecasting & Credibility Work</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Market Demand and Pricing Forecasting</h3>
+        <p>
+          Forecasted demand using proxy signals despite missing demand data.
+          MSc dissertation, later selected for academic publication.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Market-Demand-and-Pricing-Forecasting" target="_blank">
+          Case study
+        </a>
+        <a class="btn secondary" href="https://www.e-elgar.com/shop/gbp/forecasting-planning-and-strategy-in-a-turbulent-era-9781035317233.html" target="_blank">
+          Publication
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Retail Sales Forecasting — German Drugstore</h3>
+        <p>
+          Machine-learning-based sales forecasts to support inventory and
+          operational planning (confidential dataset).
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Retail-Sales-Forecasting-and-Demand-Planning" target="_blank">
+          View overview
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Time-Series Sales Forecasting — Ice-Cream (R)</h3>
+        <p>
+          ARIMA-based forecasting with marketing impact analysis for
+          seasonal demand planning.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Time-Series-Sales-Forecasting-and-Demand-Planning" target="_blank">
+          View overview
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- POWER BI -->
-  <h2>📊 Business Intelligence & Dashboard Samples</h2>
-  <p>
-    These dashboards demonstrate how insights are translated into
-    <strong>decision-ready visual tools</strong>.
-  </p>
+  <section>
+    <h2>📊 Power BI Dashboards</h2>
 
-  <ul>
-    <li>
-      <strong>Blinkit Grocery — Sales & Customer Insights</strong>
-      <a class="btn-link" href="https://github.com/aarushijain16/Sales-and-Customer-Insights-Dashboard" target="_blank">
-        View dashboard
-      </a>
-    </li>
-    <li>
-      <strong>Pizza Sales Performance Dashboard</strong>
-      <a class="btn-link" href="https://github.com/aarushijain16/Sales-Performance-and-Operations-Dashboard" target="_blank">
-        View dashboard
-      </a>
-    </li>
-    <li>
-      <strong>Classic Models — Sales & Business Performance</strong>
-      <a class="btn-link" href="https://github.com/aarushijain16/Sales-Customer-and-Business-Performance-Dashboard" target="_blank">
-        View dashboard
-      </a>
-    </li>
-      </ul>
+    <div class="grid">
 
-  <!-- FORECASTING & CREDIBILITY -->
-  <h2>📊 Supporting Forecasting & Credibility Work</h2>
+      <div class="card">
+        <h3>Blinkit Grocery Sales Analytics</h3>
+        <p>
+          Revenue, product performance, and customer behavior insights
+          using Power BI.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Sales-and-Customer-Insights-Dashboard" target="_blank">
+          View dashboard
+        </a>
+      </div>
 
-  <p>
-    <strong>Market Demand & Seasonality Forecasting — Hospitality (London Airbnb)</strong><br>
-    Designed demand forecasts using proxy signals where direct demand data was unavailable.
-    <em>(MSc Dissertation; later selected for academic publication)</em>
+      <div class="card">
+        <h3>Classic Models — Sales & Customer Performance</h3>
+        <p>
+          Multi-page dashboard covering sales, customers, products,
+          inventory, and employee performance.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Sales-Customer-and-Business-Performance-Dashboard" target="_blank">
+          View dashboard
+        </a>
+      </div>
 
-    <span class="inline-buttons">
-      <a class="btn" href="https://github.com/aarushijain16/airbnb-demand-forecasting" target="_blank">
-        Case study
-      </a>
-      <a class="btn secondary" href="https://www.e-elgar.com/shop/gbp/forecasting-planning-and-strategy-in-a-turbulent-era-9781035317233.html" target="_blank">
-        Publication
-      </a>
-    </span>
-  </p>
+      <div class="card">
+        <h3>Pizza Sales & Operations Dashboard</h3>
+        <p>
+          Time-of-day demand, AOV, product performance, and staffing insights
+          for QSR businesses.
+        </p>
+        <a class="btn" href="https://github.com/aarushijain16/Sales-Performance-and-Operations-Dashboard" target="_blank">
+          View dashboard
+        </a>
+      </div>
 
-  <p>
-    <strong>Retail Sales Forecasting — German Drugstore Chain</strong>
-    <a class="btn-link" href="https://github.com/aarushijain16/german-drugstore-sales-forecasting" target="_blank">
-      View case study
-    </a>
-  </p>
-
-  <p>
-    <strong>Time-Series Sales Forecasting — Seasonal Ice-Cream Retail</strong>
-    <a class="btn-link" href="https://github.com/aarushijain16/time-series-sales-forecasting-ice-cream" target="_blank">
-      View case study
-    </a>
-  </p>
+    </div>
+  </section>
 
   <!-- CONTACT -->
-  <h2>✉️ Contact</h2>
-  <p>
-    <a class="btn-link" href="mailto:aarushi.careers16@gmail.com">Email</a>
-    <a class="btn-link" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
-  </p>
-
   <footer>
+    <h2>📬 Contact</h2>
+    <p>
+      <a class="btn" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
+      <a class="btn secondary" href="mailto:aarushi.careers16@gmail.com">Email</a>
+    </p>
+  </footer>
+
+</body>
+</html>
