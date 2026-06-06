@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarushi Jain - Data & Business Analyst</title>
+  <title>Aarushi Jain — Data & Business Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -208,6 +208,21 @@
       color: #fff;
     }
 
+    .hero-profile-link {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .hero-profile-link a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .hero-profile-link a:hover { color: #fff; }
+
     /* ── CONTENT WRAPPER ── */
     .content {
       max-width: 1100px;
@@ -322,9 +337,7 @@
       margin-bottom: 10px;
     }
 
-    .card-bullets li:last-child {
-      margin-bottom: 0;
-    }
+    .card-bullets li:last-child { margin-bottom: 0; }
 
     .card-bullets li::before {
       content: '→';
@@ -493,6 +506,7 @@
     .hero-inner > *:nth-child(3) { animation-delay: 0.19s; }
     .hero-inner > *:nth-child(4) { animation-delay: 0.26s; }
     .hero-inner > *:nth-child(5) { animation-delay: 0.33s; }
+    .hero-inner > *:nth-child(6) { animation-delay: 0.40s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -527,7 +541,7 @@
     <p class="hero-desc">
       4+ years embedded inside B2B apparel and D2C businesses. I build the forecasting models,
       segmentation frameworks, and BI dashboards that move the needle on revenue, inventory, and retention.
-      Published researcher - Edward Elgar Publishing (2025).
+      Published researcher — Edward Elgar Publishing (2025).
     </p>
     <div class="hero-stats">
       <div class="stat">
@@ -552,6 +566,12 @@
       <a class="btn-ghost" href="https://github.com/aarushijain16" target="_blank">GitHub</a>
       <a class="btn-ghost" href="mailto:aarushi.careers16@gmail.com">aarushi.careers16@gmail.com</a>
     </div>
+    <p class="hero-profile-link">
+      Full profile →
+      <a href="https://aarushijportfolio.lovable.app" target="_blank">
+        aarushijportfolio.lovable.app
+      </a>
+    </p>
   </div>
 </header>
 
@@ -579,8 +599,8 @@
             <span class="metric-pill">MAPE 3.09%</span>
           </div>
           <ul class="card-bullets">
-            <li>Built on synthetic data modelled on a real B2B apparel manufacturer - replicating actual demand patterns, SKU variability, and distributor payment cycles. Modelled a ~$60M potential working capital opportunity via DSO simulation and identified an ~11.7% demand-supply gap.</li>
-            <li>Flagged mid-price segments ($240–$480) as key untapped revenue drivers and built a Holt-Winters demand forecasting framework (MAPE: 3.09%) with four live Power BI dashboards connected to PostgreSQL.</li>
+            <li>Built on synthetic data modelled on a real B2B apparel manufacturer — replicating actual demand patterns, SKU variability, and distributor payment cycles. Modelled a ~$60M potential working capital opportunity via DSO simulation and identified an ~11.7% demand-supply gap.</li>
+            <li>Built a Holt-Winters demand forecasting framework (MAPE: 3.09%) that flagged mid-price segments ($240–$480) as key untapped revenue drivers, with four live Power BI dashboards connected to PostgreSQL.</li>
           </ul>
           <div class="card-skills">
             <strong>Skills:</strong> SQL (PostgreSQL) · Python · Power BI · Demand Forecasting · Holt-Winters · Inventory Optimisation · Supply Chain Analytics · DAX
@@ -589,9 +609,7 @@
             <a class="btn-card btn-dark" href="https://github.com/aarushijain16/B2B-Apparel-Demand-Forecasting" target="_blank">View Project</a>
           </div>
         </div>
-        <div>
-          <!-- spacer column for featured layout breathing room -->
-        </div>
+        <div></div>
       </div>
 
       <!-- INVENTORY -->
@@ -639,7 +657,7 @@
         </div>
         <ul class="card-bullets">
           <li>Modelled ~$10M+ in potential revenue leakage by analysing delivery delays, order cancellations (~66%), and customer concentration risk on a public Foodpanda dataset.</li>
-          <li>Built an end-to-end analytics framework using RFM segmentation, operational diagnostics, and city-level churn analysis - identifying ~50% churn concentrated in low-RFM segments to surface targeted, geography-specific retention opportunities.</li>
+          <li>Built an end-to-end analytics framework using RFM segmentation, operational diagnostics, and city-level churn analysis — identifying ~50% churn concentrated in low-RFM segments to surface targeted, geography-specific retention opportunities.</li>
         </ul>
         <div class="card-skills">
           <strong>Skills:</strong> SQL (PostgreSQL) · Python · Power BI · RFM Segmentation · Cohort Analysis · Churn Analysis · Retention Strategy
@@ -659,7 +677,7 @@
           <span class="metric-pill">5 customer personas</span>
         </div>
         <ul class="card-bullets">
-          <li>Segmented customers into 5 behavioural personas using K-Means and CLV proxy modelling - revealing that high-value low-frequency buyers drive ~30% of revenue and ~25% of the base was silently at churn risk.</li>
+          <li>Segmented customers into 5 behavioural personas using K-Means and CLV proxy modelling — revealing that high-value low-frequency buyers drive ~30% of revenue and ~25% of the base was silently at churn risk.</li>
           <li>Built a retention roadmap covering persona-led CRM journeys, engagement-based loyalty design, and product affinity mapping by lifestyle intent to shift from transactional to relationship-driven growth.</li>
         </ul>
         <div class="card-skills">
@@ -679,7 +697,7 @@
       <h2 class="section-title">Forecasting &amp; Pricing Intelligence</h2>
       <div class="section-line"></div>
     </div>
-    <p class="section-desc">Demand estimation and pricing dynamics in data-scarce environments - including peer-reviewed published research.</p>
+    <p class="section-desc">Demand estimation and pricing dynamics in data-scarce environments — including peer-reviewed published research.</p>
 
     <div class="grid-2">
 
@@ -695,7 +713,7 @@
         </div>
         <ul class="card-bullets">
           <li>MSc dissertation selected for academic publication with Edward Elgar Publishing (2025). Engineered proxy demand signals (reviews, availability, pricing trends) to forecast market demand and pricing dynamics where direct booking data was unavailable.</li>
-          <li>Applied XGBoost, Random Forest, and Decision Tree models on London Airbnb listing data (2008–2023) - XGBoost delivered best forecasting performance, identifying ~25% Inner London price premium and listing type as the strongest demand driver.</li>
+          <li>Applied XGBoost, Random Forest, and Decision Tree models on London Airbnb listing data (2008–2023) — XGBoost delivered best forecasting performance, identifying ~25% Inner London price premium and listing type as the strongest demand driver.</li>
         </ul>
         <div class="card-skills">
           <strong>Skills:</strong> Python · XGBoost · Random Forest · Feature Engineering · Demand Forecasting · Geospatial Analysis · Time-Series Analysis
@@ -725,7 +743,7 @@
         <h3>SQL Playbook: Business-Critical Analytical Queries</h3>
         <ul class="card-bullets">
           <li>A reusable library of 20 business-critical SQL queries solving real analytical problems across revenue analysis, RFM segmentation, cohort retention, inventory risk, and demand forecasting.</li>
-          <li>Demonstrates advanced SQL including CTEs, window functions, time-based cohort analysis, and product classification logic - structured as a practical reference for B2B and D2C analytics use cases.</li>
+          <li>Demonstrates advanced SQL including CTEs, window functions, time-based cohort analysis, and product classification logic — structured as a practical reference for B2B and D2C analytics use cases.</li>
         </ul>
         <div class="card-skills">
           <strong>Skills:</strong> SQL (PostgreSQL) · CTEs · Window Functions · Cohort Analysis · RFM Segmentation · Revenue Analytics · Inventory Planning
@@ -751,6 +769,7 @@
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
       <a href="https://github.com/aarushijain16" target="_blank">GitHub</a>
+      <a href="https://aarushijportfolio.lovable.app" target="_blank">Full Profile</a>
       <a href="mailto:aarushi.careers16@gmail.com">Email</a>
     </div>
   </div>
