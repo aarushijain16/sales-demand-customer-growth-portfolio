@@ -2,292 +2,773 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>E-Commerce & Supply Chain Analytics for Revenue, Demand, and Growth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarushi Jain — Data & Business Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1A2744;
+      --teal:   #2B7A6F;
+      --cream:  #FAF8F4;
+      --sand:   #EDE8DF;
+      --text:   #1C1C1C;
+      --muted:  #5A5A5A;
+      --border: #DDD8CF;
+      --accent: #C17E3A;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Arial, sans-serif;
-      background: #ffffff;
-      color: #111827;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 24px;
-      line-height: 1.6;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 16px;
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 48px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      height: 56px;
     }
 
-    p {
-      margin-bottom: 14px;
-      color: #374151;
+    .nav-brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      color: #fff;
+      letter-spacing: 0.01em;
     }
 
-    /* SECTION DIVIDER */
-    section {
-      margin-top: 56px;
-      padding-top: 32px;
-      border-top: 1px solid #e5e7eb;
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
     }
 
-    /* BUTTONS (smaller) */
-    .btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      border-radius: 6px;
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
+      font-size: 0.85rem;
       font-weight: 500;
-      background: #111827;
-      color: #ffffff;
-      margin-right: 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
 
-    .btn.secondary {
-      background: #f3f4f6;
-      color: #111827;
-      border: 1px solid #d1d5db;
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 80px 48px 72px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      opacity: 0.9;
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* GRID FOR PROJECT TILES */
-    .grid {
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: 60px;
+      bottom: -80px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 620px;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: var(--teal);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #235f57; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    /* ── CONTENT WRAPPER ── */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-top: 72px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+
+    /* ── GRID ── */
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 20px;
-      margin-top: 24px;
     }
 
-    /* PROJECT CARD */
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 20px;
-      background: #ffffff;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
+
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 28px rgba(26,39,68,0.10);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .tag-revenue  { background: #EDF7F5; color: var(--teal); }
+    .tag-supply   { background: #EEF3FB; color: #2455A4; }
+    .tag-forecast { background: #FDF4EA; color: var(--accent); }
+    .tag-sql      { background: #F3F0FB; color: #5B3DB8; }
 
     .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #111827;
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .card p {
-      font-size: 0.95rem;
-      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 16px;
+      font-weight: 300;
+      line-height: 1.6;
     }
 
-    /* FOOTER */
+    .card-metrics {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .metric-pill {
+      background: var(--sand);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .card-skills {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .card-skills strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-dark:hover { background: #263561; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--sand);
+    }
+
+    .pub-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── FEATURED CARD (wide) ── */
+    .card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .card-featured .card-left {}
+    .card-featured .card-right {}
+
+    @media (max-width: 680px) {
+      .card-featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── FOOTER ── */
     footer {
+      background: var(--navy);
+      padding: 48px;
       margin-top: 80px;
-      padding-top: 40px;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.95rem;
     }
 
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-left h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .footer-left p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .footer-links a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner > * {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.12s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.19s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.26s; }
+    .hero-inner > *:nth-child(5) { animation-delay: 0.33s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 56px 20px 52px; }
+      .content { padding: 0 20px 60px; }
+      .hero-stats { gap: 24px; }
+      footer { padding: 40px 20px; }
+      .nav-links { display: none; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <h1>E-Commerce & Supply Chain Analytics for Revenue, Demand, and Growth</h1>
-  <p><strong>E-commerce | D2C | Retail | Supply Chain</strong></p>
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Aarushi Jain</span>
+  <ul class="nav-links">
+    <li><a href="#revenue">Revenue</a></li>
+    <li><a href="#supply">Supply Chain</a></li>
+    <li><a href="#forecast">Forecasting</a></li>
+    <li><a href="#sql">SQL</a></li>
+  </ul>
+</nav>
 
-  
-  <!-- CASE STUDIES -->
-   <section>
-    <h2>💰 Revenue and Growth Analytics</h2>
-    <p><strong>Driving revenue growth and improving customer retention through behavioral and cohort-based analysis.</strong></p>
-    <div class="grid">
-
-      <div class="card">
-        <h3>Customer Churn and Revenue Leakage Analysis</h3>
-        <p>
-          
-          Modelled ~$10M+ in potential revenue leakage and identified ~50% churn concentrated in low-RFM segments across a public food delivery dataset.
-          Built an end-to-end analytics framework using RFM segmentation, operational diagnostics (cancellation rate ~66%), and city-level churn analysis to surface targeted retention opportunities.
-         
-          
-        </p>
-        <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      SQL (PostgreSQL) | Python | Power BI |
-      RFM Segmentation | Cohort Analysis | Churn Analysis | Retention Strategy
-    </em>
-  </p>
-        <a class="btn" href="https://github.com/aarushijain16/Customer-Retention-and-Revenue-Growth-Analytics-FoodPanda" target="_blank">
-          View Project
-        </a>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Data &amp; Business Analyst · B2B Apparel · D2C · E-Commerce</span>
+    <h1>Turning raw ops data<br>into <em>commercial decisions</em></h1>
+    <p class="hero-desc">
+      4+ years embedded inside B2B apparel and D2C businesses. I build the forecasting models,
+      segmentation frameworks, and BI dashboards that move the needle on revenue, inventory, and retention.
+      Published researcher — Edward Elgar Publishing (2025).
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">$60M+</span>
+        <span class="stat-label">Working capital modelled</span>
       </div>
-
-      <div class="card">
-        <h3>Customer Segmentation and CLV Strategy for Omnichannel D2C Brand</h3>
-        <p>
-          Segmented customers into 5 behavioural personas using K-Means and CLV 
-proxy modelling on a public D2C retail dataset. Revealed that high-value 
-low-frequency buyers drive ~30% of revenue and ~25% of the base was 
-silently at churn risk. Built a retention roadmap covering persona-led 
-CRM journeys, engagement-based loyalty design, and product affinity 
-mapping by lifestyle intent.
-        </p>
-        <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      SQL (PostgreSQL) | Python | Power BI |
-      K-Means Clustering | CLV Modelling | RFM Analysis | Customer Segmentation | Retention Strategy
-    </em>
-  </p>
-        <a class="btn" href="https://github.com/aarushijain16/Omnichannel-Customer-Segmentation-and-Growth-Strategy-Nicobar" target="_blank">
-          View Project
-        </a>
+      <div class="stat">
+        <span class="stat-num">$10M+</span>
+        <span class="stat-label">Revenue leakage identified</span>
       </div>
-
-     
- <div class="card">
-        <h3>SQL Playbook: Business-Critical Queries</h3>
-        <p>
-        A reusable library of 20 business-critical SQL queries solving 
-real analytical problems across revenue analysis, RFM segmentation, 
-cohort retention, inventory risk, and demand forecasting — structured 
-as a practical reference for B2B and D2C analytics use cases. 
-Demonstrates advanced SQL including CTEs, window functions, 
-time-based cohort analysis, and product classification logic.
-          
-        </p>
-        <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      SQL (PostgreSQL) |
-      CTEs | Window Functions | Cohort Analysis | RFM Segmentation | Revenue Analytics | Inventory Planning
-    </em>
-  </p>
-        <a class="btn" href="https://github.com/aarushijain16/SQL-Business-Analytics-Case-Study" target="_blank">
-          View Project
-        </a>
+      <div class="stat">
+        <span class="stat-num">3.09%</span>
+        <span class="stat-label">Forecast MAPE (Holt-Winters)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">Years B2B &amp; D2C analytics</span>
       </div>
     </div>
-  </section>
-   
-  <section>
-    <h2>📦 Demand, Inventory and Supply Chain Analytics</h2>
-    <p><strong>Optimizing demand planning, inventory allocation, and production efficiency using data-driven insights.</strong></p>
-    <div class="grid">
-      
-      <div class="card">
-        <h3>End-to-End Apparel Business Analytics</h3>
-        <p>
-         Built on synthetic data modelled on a real B2B apparel manufacturer — 
-replicating actual demand patterns, SKU variability, and distributor 
-payment cycles. Modelled a ~$60M potential working capital opportunity 
-via DSO simulation, identified an ~11.7% demand-supply gap, and 
-flagged mid-price segments ($240–$480) as key untapped revenue drivers. 
-Built Holt-Winters demand forecasting framework (MAPE: 3.09%) and 
-four live Power BI dashboards connected to PostgreSQL.
-        </p>
-        <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      SQL (PostgreSQL) | Python | Power BI |
-      Demand Forecasting | Holt-Winters | Inventory Optimisation | Supply Chain Analytics | DAX
-    </em>
-  </p>
-        <a class="btn" href="https://github.com/aarushijain16/B2B-Apparel-Demand-Forecasting" target="_blank">
-         View Project
-        </a>
-        
+    <div class="hero-links">
+      <a class="btn-primary" href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
+      <a class="btn-ghost" href="https://github.com/aarushijain16" target="_blank">GitHub</a>
+      <a class="btn-ghost" href="mailto:aarushi.careers16@gmail.com">aarushi.careers16@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- SECTION 1: APPAREL (featured, goes first) -->
+  <div class="section" id="supply">
+    <div class="section-header">
+      <h2 class="section-title">Demand, Inventory &amp; Supply Chain Analytics</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-desc">Demand planning, inventory optimisation, and working capital analysis for B2B apparel and retail businesses.</p>
+
+    <div class="grid-2">
+
+      <!-- APPAREL — FEATURED -->
+      <div class="card card-featured">
+        <div class="card-left">
+          <span class="card-tag tag-supply">B2B Apparel · Featured Project</span>
+          <h3>End-to-End Apparel Business Analytics</h3>
+          <div class="card-metrics">
+            <span class="metric-pill">~$60M working capital opportunity</span>
+            <span class="metric-pill">~11.7% demand gap</span>
+            <span class="metric-pill">MAPE 3.09%</span>
+          </div>
+          <p>
+            Built on synthetic data modelled on a real B2B apparel manufacturer —
+            replicating actual demand patterns, SKU variability, and distributor
+            payment cycles. Modelled a ~$60M potential working capital opportunity
+            via DSO simulation, identified an ~11.7% demand-supply gap, and flagged
+            mid-price segments ($240–$480) as key untapped revenue drivers.
+          </p>
+        </div>
+        <div class="card-right">
+          <p style="margin-bottom:12px;">
+            Built Holt-Winters demand forecasting framework (MAPE: 3.09%) and
+            four live Power BI dashboards connected to PostgreSQL — covering
+            Sales Overview, Distributor Performance, Product Analytics,
+            and Production Monitoring.
+          </p>
+          <div class="card-skills">
+            <strong>Skills:</strong>
+            SQL (PostgreSQL) · Python · Power BI · Demand Forecasting ·
+            Holt-Winters · Inventory Optimisation · Supply Chain Analytics · DAX
+          </div>
+          <div class="card-actions">
+            <a class="btn-card btn-dark" href="https://github.com/aarushijain16/B2B-Apparel-Demand-Forecasting" target="_blank">View Project</a>
+          </div>
+        </div>
       </div>
 
+      <!-- INVENTORY -->
       <div class="card">
+        <span class="card-tag tag-supply">Inventory · Maven Superstore Dataset</span>
         <h3>Optimising Inventory and Reducing Stock-Outs Using ABC-XYZ and Demand Planning</h3>
+        <div class="card-metrics">
+          <span class="metric-pill">~$15M+ stock-out losses modelled</span>
+          <span class="metric-pill">~$10M+ excess inventory</span>
+          <span class="metric-pill">~98% slow-moving SKUs</span>
+        </div>
         <p>
-          Applied ABC-XYZ segmentation to a public retail dataset to classify 
-~98% of SKUs as slow-moving or dead stock, modelling ~$15M+ in 
-potential stock-out losses and ~$10M+ in excess inventory. Built 
-a demand-driven replenishment framework using safety stock modelling 
-and reorder point calculations to eliminate reactive inventory 
-decisions and surface the working capital case for a full 
-inventory strategy overhaul.
+          Applied ABC-XYZ segmentation to classify ~98% of SKUs as slow-moving
+          or dead stock, modelling ~$15M+ in potential stock-out losses and ~$10M+
+          in excess inventory. Built a demand-driven replenishment framework using
+          safety stock modelling and reorder point calculations to eliminate
+          reactive inventory decisions.
         </p>
-        <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      SQL (PostgreSQL) | Python | Power BI |
-      ABC-XYZ Analysis | Safety Stock Modelling | Inventory Optimisation | Demand Planning
-    </em>
-  </p>
-        <a class="btn" href="https://github.com/aarushijain16/Sales-and-Demand-Driven-Inventory-Planning-Retail-Maven-Superstore" target="_blank">
-         View Project
-        </a>
-        
+        <div class="card-skills">
+          <strong>Skills:</strong>
+          SQL (PostgreSQL) · Python · Power BI · ABC-XYZ Analysis ·
+          Safety Stock Modelling · Inventory Optimisation · Demand Planning
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Sales-and-Demand-Driven-Inventory-Planning-Retail-Maven-Superstore" target="_blank">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 2: REVENUE -->
+  <div class="section" id="revenue">
+    <div class="section-header">
+      <h2 class="section-title">Customer &amp; Revenue Analytics</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-desc">Churn analysis, customer segmentation, and CLV strategy for D2C and e-commerce businesses.</p>
+
+    <div class="grid-2">
+
+      <!-- CHURN -->
+      <div class="card">
+        <span class="card-tag tag-revenue">D2C · Food Delivery · Public Dataset</span>
+        <h3>Customer Churn &amp; Revenue Leakage Analysis</h3>
+        <div class="card-metrics">
+          <span class="metric-pill">~$10M+ revenue leakage modelled</span>
+          <span class="metric-pill">~50% churn in low-RFM</span>
+          <span class="metric-pill">~66% cancellation rate</span>
+        </div>
+        <p>
+          Modelled ~$10M+ in potential revenue leakage by analysing delivery delays,
+          order cancellations (~66%), and customer concentration risk on a public
+          Foodpanda dataset. Built an end-to-end analytics framework using RFM
+          segmentation, operational diagnostics, and city-level churn analysis
+          to surface targeted retention opportunities.
+        </p>
+        <div class="card-skills">
+          <strong>Skills:</strong>
+          SQL (PostgreSQL) · Python · Power BI · RFM Segmentation ·
+          Cohort Analysis · Churn Analysis · Retention Strategy
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Customer-Retention-and-Revenue-Growth-Analytics-FoodPanda" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- CLV -->
+      <div class="card">
+        <span class="card-tag tag-revenue">D2C · Omnichannel · Nicobar-Inspired</span>
+        <h3>Customer Segmentation &amp; CLV Strategy for Omnichannel D2C Brand</h3>
+        <div class="card-metrics">
+          <span class="metric-pill">~30% revenue from high-value buyers</span>
+          <span class="metric-pill">~25% base at churn risk</span>
+          <span class="metric-pill">5 customer personas</span>
+        </div>
+        <p>
+          Segmented customers into 5 behavioural personas using K-Means and CLV
+          proxy modelling. Revealed that high-value low-frequency buyers drive ~30%
+          of revenue and ~25% of the base was silently at churn risk. Built a
+          retention roadmap covering persona-led CRM journeys, engagement-based
+          loyalty design, and product affinity mapping by lifestyle intent.
+        </p>
+        <div class="card-skills">
+          <strong>Skills:</strong>
+          Python · Power BI · K-Means Clustering · CLV Modelling ·
+          RFM Analysis · Customer Segmentation · Retention Strategy
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Omnichannel-Customer-Segmentation-and-Growth-Strategy-Nicobar" target="_blank">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: FORECASTING -->
+  <div class="section" id="forecast">
+    <div class="section-header">
+      <h2 class="section-title">Forecasting &amp; Pricing Intelligence</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-desc">Demand estimation and pricing dynamics in data-scarce environments — including peer-reviewed published research.</p>
+
+    <div class="grid-2">
+      <div class="card" style="position:relative;">
+        <span class="pub-badge">Published 2025</span>
+        <span class="card-tag tag-forecast">MSc Dissertation · Edward Elgar Publishing</span>
+        <h3>Market Demand Forecasting and Pricing Intelligence Using Proxy Data (Airbnb Research)</h3>
+        <div class="card-metrics">
+          <span class="metric-pill">~25% Inner London price premium</span>
+          <span class="metric-pill">XGBoost best model</span>
+          <span class="metric-pill">2008–2023 dataset</span>
+        </div>
+        <p>
+          MSc dissertation selected for academic publication with Edward Elgar
+          Publishing (2025) — one of few analyst portfolios backed by
+          peer-reviewed research. Engineered proxy demand signals (reviews,
+          availability, pricing trends) to forecast market demand and pricing
+          dynamics where direct booking data was unavailable. Applied XGBoost,
+          Random Forest, and Decision Tree models on London Airbnb listing
+          data (2008–2023).
+        </p>
+        <div class="card-skills">
+          <strong>Skills:</strong>
+          Python · XGBoost · Random Forest · Feature Engineering ·
+          Demand Forecasting · Geospatial Analysis · Time-Series Analysis
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Market-Demand-and-Pricing-Forecasting-Airbnb" target="_blank">View Project</a>
+          <a class="btn-card btn-outline" href="https://www.e-elgar.com/shop/gbp/forecasting-planning-and-strategy-in-a-turbulent-era-9781035317233.html" target="_blank">Publication →</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-     
-     
-  
-  <section>
-    <h2>📈 Forecasting and Pricing</h2>
-    <p><strong>Estimating demand patterns and pricing dynamics using time-series modeling and proxy-based analysis.</strong></p>
-    <div class="grid">
-   
+  <!-- SECTION 4: SQL -->
+  <div class="section" id="sql">
+    <div class="section-header">
+      <h2 class="section-title">Technical Skills Demonstration</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-desc">A structured SQL reference library built for B2B and D2C analytics use cases.</p>
+
+    <div class="grid-3">
       <div class="card">
-      <h3>Market Demand Forecasting and Pricing Intelligence Using Proxy Data (Airbnb Research)</h3>
-      <p>
-        MSc dissertation selected for academic publication with 
-Edward Elgar Publishing (2025) — one of few analyst 
-portfolios backed by peer-reviewed research.
-
-Engineered proxy demand signals (reviews, availability, 
-pricing trends) to forecast market demand and pricing 
-dynamics where direct booking data was unavailable. 
-Applied XGBoost, Random Forest, and Decision Tree models 
-on London Airbnb listing data (2008–2023), with XGBoost 
-delivering the best forecasting performance. Identified 
-~25% Inner London price premium and listing type as the 
-strongest demand driver.
-      </p>
-      <p style="font-size: 0.9em; margin-top: 6px;">
-    <strong>Skills:</strong>
-    <em>
-      Python | XGBoost | Random Forest | Feature Engineering |
-      Demand Forecasting | Geospatial Analysis | Time-Series Analysis
-    </em>
-  </p>
-      <a class="btn" href="https://github.com/aarushijain16/Market-Demand-and-Pricing-Forecasting-Airbnb" target="_blank">
-        View Project
-      </a>
-
-      <a class="btn secondary" href="https://www.e-elgar.com/shop/gbp/forecasting-planning-and-strategy-in-a-turbulent-era-9781035317233.html" target="_blank">
-        Publication
-      </a>
+        <span class="card-tag tag-sql">SQL · PostgreSQL · 20 Queries</span>
+        <h3>SQL Playbook: Business-Critical Analytical Queries</h3>
+        <p>
+          A reusable library of 20 business-critical SQL queries solving real
+          analytical problems across revenue analysis, RFM segmentation, cohort
+          retention, inventory risk, and demand forecasting. Demonstrates advanced
+          SQL including CTEs, window functions, time-based cohort analysis,
+          and product classification logic.
+        </p>
+        <div class="card-skills">
+          <strong>Skills:</strong>
+          SQL (PostgreSQL) · CTEs · Window Functions · Cohort Analysis ·
+          RFM Segmentation · Revenue Analytics · Inventory Planning
+        </div>
+        <div class="card-actions">
+          <a class="btn-card btn-dark" href="https://github.com/aarushijain16/SQL-Business-Analytics-Case-Study" target="_blank">View Project</a>
+        </div>
+      </div>
     </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <h3>Aarushi Jain</h3>
+      <p>Data &amp; Business Analyst · B2B Apparel · D2C · E-Commerce<br>
+      Open to analyst roles at product-led companies</p>
     </div>
-  </section>
-    
-  
-
-  
-
-
-
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/aarushiijainn" target="_blank">LinkedIn</a>
+      <a href="https://github.com/aarushijain16" target="_blank">GitHub</a>
+      <a href="mailto:aarushi.careers16@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
