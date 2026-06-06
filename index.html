@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarushi Jain - Data & Business Analyst</title>
+  <title>Aarushi Jain — Data & Business Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -232,6 +232,7 @@
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--navy);
+      white-space: nowrap;
     }
 
     .section-line {
@@ -303,27 +304,49 @@
       line-height: 1.35;
     }
 
-    .card p {
+    /* ── BULLET POINTS ── */
+    .card-bullets {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .card-bullets li {
       font-size: 0.9rem;
       color: var(--muted);
-      flex: 1;
-      margin-bottom: 16px;
       font-weight: 300;
       line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .card-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 0.85rem;
+      top: 1px;
     }
 
     .card-metrics {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .metric-pill {
       background: var(--sand);
       border-radius: 4px;
       padding: 4px 10px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: var(--navy);
     }
@@ -344,6 +367,7 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      margin-top: auto;
     }
 
     .btn-card {
@@ -371,9 +395,7 @@
       border: 1px solid var(--border);
     }
 
-    .btn-outline:hover {
-      background: var(--sand);
-    }
+    .btn-outline:hover { background: var(--sand); }
 
     .pub-badge {
       position: absolute;
@@ -398,13 +420,8 @@
       align-items: start;
     }
 
-    .card-featured .card-left {}
-    .card-featured .card-right {}
-
     @media (max-width: 680px) {
-      .card-featured {
-        grid-template-columns: 1fr;
-      }
+      .card-featured { grid-template-columns: 1fr; }
     }
 
     /* ── FOOTER ── */
@@ -495,8 +512,8 @@
 <nav>
   <span class="nav-brand">Aarushi Jain</span>
   <ul class="nav-links">
-    <li><a href="#revenue">Revenue</a></li>
     <li><a href="#supply">Supply Chain</a></li>
+    <li><a href="#revenue">Revenue</a></li>
     <li><a href="#forecast">Forecasting</a></li>
     <li><a href="#sql">SQL</a></li>
   </ul>
@@ -510,7 +527,7 @@
     <p class="hero-desc">
       4+ years embedded inside B2B apparel and D2C businesses. I build the forecasting models,
       segmentation frameworks, and BI dashboards that move the needle on revenue, inventory, and retention.
-      Published researcher - Edward Elgar Publishing (2025).
+      Published researcher — Edward Elgar Publishing (2025).
     </p>
     <div class="hero-stats">
       <div class="stat">
@@ -541,7 +558,7 @@
 <!-- CONTENT -->
 <div class="content">
 
-  <!-- SECTION 1: APPAREL (featured, goes first) -->
+  <!-- SECTION 1: SUPPLY CHAIN -->
   <div class="section" id="supply">
     <div class="section-header">
       <h2 class="section-title">Demand, Inventory &amp; Supply Chain Analytics</h2>
@@ -551,9 +568,9 @@
 
     <div class="grid-2">
 
-      <!-- APPAREL - FEATURED -->
+      <!-- APPAREL FEATURED -->
       <div class="card card-featured">
-        <div class="card-left">
+        <div>
           <span class="card-tag tag-supply">B2B Apparel · Featured Project</span>
           <h3>End-to-End Apparel Business Analytics</h3>
           <div class="card-metrics">
@@ -561,30 +578,19 @@
             <span class="metric-pill">~11.7% demand gap</span>
             <span class="metric-pill">MAPE 3.09%</span>
           </div>
-          <p>
-            - Built on synthetic data modelled on a real B2B apparel manufacturer -
-            replicating actual demand patterns, SKU variability, and distributor
-            payment cycles. 
-            
-            - Modelled a ~$60M potential working capital opportunity via DSO simulation, identified an ~11.7% demand-supply gap, and flagged
-            mid-price segments ($240–$480) as key untapped revenue drivers.
-          </p>
-        </div>
-        <div class="card-right">
-          <p style="margin-bottom:12px;">
-            - Built Holt-Winters demand forecasting framework (MAPE: 3.09%) and
-            four live Power BI dashboards connected to PostgreSQL - covering
-            Sales Overview, Distributor Performance, Product Analytics,
-            and Production Monitoring.
-          </p>
+          <ul class="card-bullets">
+            <li>Built on synthetic data modelled on a real B2B apparel manufacturer — replicating actual demand patterns, SKU variability, and distributor payment cycles. Modelled a ~$60M potential working capital opportunity via DSO simulation and identified an ~11.7% demand-supply gap.</li>
+            <li>Flagged mid-price segments ($240–$480) as key untapped revenue drivers and built a Holt-Winters demand forecasting framework (MAPE: 3.09%) with four live Power BI dashboards connected to PostgreSQL.</li>
+          </ul>
           <div class="card-skills">
-            <strong>Skills:</strong>
-            SQL (PostgreSQL) · Python · Power BI · Demand Forecasting ·
-            Holt-Winters · Inventory Optimisation · Supply Chain Analytics · DAX
+            <strong>Skills:</strong> SQL (PostgreSQL) · Python · Power BI · Demand Forecasting · Holt-Winters · Inventory Optimisation · Supply Chain Analytics · DAX
           </div>
           <div class="card-actions">
             <a class="btn-card btn-dark" href="https://github.com/aarushijain16/B2B-Apparel-Demand-Forecasting" target="_blank">View Project</a>
           </div>
+        </div>
+        <div>
+          <!-- spacer column for featured layout breathing room -->
         </div>
       </div>
 
@@ -597,19 +603,12 @@
           <span class="metric-pill">~$10M+ excess inventory</span>
           <span class="metric-pill">~98% slow-moving SKUs</span>
         </div>
-        <p>
-          - Applied ABC-XYZ segmentation to classify ~98% of SKUs as slow-moving
-          or dead stock, modelling ~$15M+ in potential stock-out losses and ~$10M+
-          in excess inventory. 
-         
-          - Built a demand-driven replenishment framework using
-          safety stock modelling and reorder point calculations to eliminate
-          reactive inventory decisions.
-        </p>
+        <ul class="card-bullets">
+          <li>Applied ABC-XYZ segmentation to classify ~98% of SKUs as slow-moving or dead stock, modelling ~$15M+ in potential stock-out losses and ~$10M+ in excess inventory on a public retail dataset.</li>
+          <li>Built a demand-driven replenishment framework using safety stock modelling and reorder point calculations to eliminate reactive inventory decisions and surface the working capital case for a full inventory strategy overhaul.</li>
+        </ul>
         <div class="card-skills">
-          <strong>Skills:</strong>
-          SQL (PostgreSQL) · Python · Power BI · ABC-XYZ Analysis ·
-          Safety Stock Modelling · Inventory Optimisation · Demand Planning
+          <strong>Skills:</strong> SQL (PostgreSQL) · Python · Power BI · ABC-XYZ Analysis · Safety Stock Modelling · Inventory Optimisation · Demand Planning
         </div>
         <div class="card-actions">
           <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Sales-and-Demand-Driven-Inventory-Planning-Retail-Maven-Superstore" target="_blank">View Project</a>
@@ -638,19 +637,12 @@
           <span class="metric-pill">~50% churn in low-RFM</span>
           <span class="metric-pill">~66% cancellation rate</span>
         </div>
-        <p>
-          - Modelled ~$10M+ in potential revenue leakage by analysing delivery delays,
-          order cancellations (~66%), and customer concentration risk on a public
-          Foodpanda dataset. 
-          
-          - Built an end-to-end analytics framework using RFM
-          segmentation, operational diagnostics, and city-level churn analysis
-          to surface targeted retention opportunities.
-        </p>
+        <ul class="card-bullets">
+          <li>Modelled ~$10M+ in potential revenue leakage by analysing delivery delays, order cancellations (~66%), and customer concentration risk on a public Foodpanda dataset.</li>
+          <li>Built an end-to-end analytics framework using RFM segmentation, operational diagnostics, and city-level churn analysis — identifying ~50% churn concentrated in low-RFM segments to surface targeted, geography-specific retention opportunities.</li>
+        </ul>
         <div class="card-skills">
-          <strong>Skills:</strong>
-          SQL (PostgreSQL) · Python · Power BI · RFM Segmentation ·
-          Cohort Analysis · Churn Analysis · Retention Strategy
+          <strong>Skills:</strong> SQL (PostgreSQL) · Python · Power BI · RFM Segmentation · Cohort Analysis · Churn Analysis · Retention Strategy
         </div>
         <div class="card-actions">
           <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Customer-Retention-and-Revenue-Growth-Analytics-FoodPanda" target="_blank">View Project</a>
@@ -666,20 +658,12 @@
           <span class="metric-pill">~25% base at churn risk</span>
           <span class="metric-pill">5 customer personas</span>
         </div>
-        <p>
-         - Segmented customers into 5 behavioural personas using K-Means and CLV
-          proxy modelling. 
-          
-          - Revealed that high-value low-frequency buyers drive ~30%
-          of revenue and ~25% of the base was silently at churn risk.
-          
-          - Built a retention roadmap covering persona-led CRM journeys, engagement-based
-          loyalty design, and product affinity mapping by lifestyle intent.
-        </p>
+        <ul class="card-bullets">
+          <li>Segmented customers into 5 behavioural personas using K-Means and CLV proxy modelling — revealing that high-value low-frequency buyers drive ~30% of revenue and ~25% of the base was silently at churn risk.</li>
+          <li>Built a retention roadmap covering persona-led CRM journeys, engagement-based loyalty design, and product affinity mapping by lifestyle intent to shift from transactional to relationship-driven growth.</li>
+        </ul>
         <div class="card-skills">
-          <strong>Skills:</strong>
-          Python · Power BI · K-Means Clustering · CLV Modelling ·
-          RFM Analysis · Customer Segmentation · Retention Strategy
+          <strong>Skills:</strong> Python · Power BI · K-Means Clustering · CLV Modelling · RFM Analysis · Customer Segmentation · Retention Strategy
         </div>
         <div class="card-actions">
           <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Omnichannel-Customer-Segmentation-and-Growth-Strategy-Nicobar" target="_blank">View Project</a>
@@ -695,10 +679,12 @@
       <h2 class="section-title">Forecasting &amp; Pricing Intelligence</h2>
       <div class="section-line"></div>
     </div>
-    <p class="section-desc">Demand estimation and pricing dynamics in data-scarce environments - including peer-reviewed published research.</p>
+    <p class="section-desc">Demand estimation and pricing dynamics in data-scarce environments — including peer-reviewed published research.</p>
 
     <div class="grid-2">
-      <div class="card" style="position:relative;">
+
+      <!-- AIRBNB -->
+      <div class="card">
         <span class="pub-badge">Published 2025</span>
         <span class="card-tag tag-forecast">MSc Dissertation · Edward Elgar Publishing</span>
         <h3>Market Demand Forecasting and Pricing Intelligence Using Proxy Data (Airbnb Research)</h3>
@@ -707,27 +693,19 @@
           <span class="metric-pill">XGBoost best model</span>
           <span class="metric-pill">2008–2023 dataset</span>
         </div>
-        <p>
-          - MSc dissertation selected for academic publication with Edward Elgar
-          Publishing (2025) - one of few analyst portfolios backed by
-          peer-reviewed research. 
-          
-          - Engineered proxy demand signals (reviews, availability, pricing trends) to forecast market demand and pricing
-          dynamics where direct booking data was unavailable. 
-          
-          - Applied XGBoost, Random Forest, and Decision Tree models on London Airbnb listing
-          data (2008–2023).
-        </p>
+        <ul class="card-bullets">
+          <li>MSc dissertation selected for academic publication with Edward Elgar Publishing (2025). Engineered proxy demand signals (reviews, availability, pricing trends) to forecast market demand and pricing dynamics where direct booking data was unavailable.</li>
+          <li>Applied XGBoost, Random Forest, and Decision Tree models on London Airbnb listing data (2008–2023) — XGBoost delivered best forecasting performance, identifying ~25% Inner London price premium and listing type as the strongest demand driver.</li>
+        </ul>
         <div class="card-skills">
-          <strong>Skills:</strong>
-          Python · XGBoost · Random Forest · Feature Engineering ·
-          Demand Forecasting · Geospatial Analysis · Time-Series Analysis
+          <strong>Skills:</strong> Python · XGBoost · Random Forest · Feature Engineering · Demand Forecasting · Geospatial Analysis · Time-Series Analysis
         </div>
         <div class="card-actions">
           <a class="btn-card btn-dark" href="https://github.com/aarushijain16/Market-Demand-and-Pricing-Forecasting-Airbnb" target="_blank">View Project</a>
           <a class="btn-card btn-outline" href="https://www.e-elgar.com/shop/gbp/forecasting-planning-and-strategy-in-a-turbulent-era-9781035317233.html" target="_blank">Publication →</a>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -740,26 +718,23 @@
     <p class="section-desc">A structured SQL reference library built for B2B and D2C analytics use cases.</p>
 
     <div class="grid-3">
+
+      <!-- SQL PLAYBOOK -->
       <div class="card">
         <span class="card-tag tag-sql">SQL · PostgreSQL · 20 Queries</span>
         <h3>SQL Playbook: Business-Critical Analytical Queries</h3>
-        <p>
-          - A reusable library of 20 business-critical SQL queries solving real
-          analytical problems across revenue analysis, RFM segmentation, cohort
-          retention, inventory risk, and demand forecasting. 
-          
-          - Demonstrates advanced SQL including CTEs, window functions, time-based cohort analysis,
-          and product classification logic.
-        </p>
+        <ul class="card-bullets">
+          <li>A reusable library of 20 business-critical SQL queries solving real analytical problems across revenue analysis, RFM segmentation, cohort retention, inventory risk, and demand forecasting.</li>
+          <li>Demonstrates advanced SQL including CTEs, window functions, time-based cohort analysis, and product classification logic — structured as a practical reference for B2B and D2C analytics use cases.</li>
+        </ul>
         <div class="card-skills">
-          <strong>Skills:</strong>
-          SQL (PostgreSQL) · CTEs · Window Functions · Cohort Analysis ·
-          RFM Segmentation · Revenue Analytics · Inventory Planning
+          <strong>Skills:</strong> SQL (PostgreSQL) · CTEs · Window Functions · Cohort Analysis · RFM Segmentation · Revenue Analytics · Inventory Planning
         </div>
         <div class="card-actions">
           <a class="btn-card btn-dark" href="https://github.com/aarushijain16/SQL-Business-Analytics-Case-Study" target="_blank">View Project</a>
         </div>
       </div>
+
     </div>
   </div>
 
